@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    h1= title
+  
+    - var result = [{"movieName":"Sitaramam","movieGenre":"Romance","Rating":5},{"movieName":"RRR","movieGenre":"Action","Rating":4},{"movieName":"Chichore","movieGenre":"comedy","Rating":5}]
+    div.container-fluid
+        div.row
+            each item,index in result
+                div.col-sm-2(onclick=`buy(${index})`) Movie Name: #{item["movieName"]}  <br>  Movie Genre: #{item["movieGenre"]} <br> Rating: #{item["Rating"]} 
+    script.
+      function buy(i)
+      {
+      alert("you purchased item "+(i+1))
+      }
