@@ -26,5 +26,5 @@ router.get('/movie/:id', movie_controller.movie_detail);
  
 // GET request for list of all movie items. 
 router.get('/movie', movie_controller.movie_list); 
- 
+
 module.exports = router;

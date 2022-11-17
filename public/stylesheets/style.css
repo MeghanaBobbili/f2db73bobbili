@@ -6,3 +6,11 @@ body {
 a {
   color: #00B7FF;
 }
+
+.moviestyle{
+  text-align: center;
+}
+.movieAttr {
+  background-color: aqua;
+  width: auto;
+ }
