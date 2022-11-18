@@ -5,11 +5,13 @@ block content
   
     - var movieresult = results
     div.container-fluid
-        div.row
-            each item,index in movieresult
-                div.col-sm-2(onclick=`buy(${index})`) Movie Name: #{item["movie_Name"]}  <br>  Movie Genre: #{item["movie_Genre"]} <br> Rating: #{item["Rating"]} 
+        div(class="row m-1")
+            each item in movieresult
+                - let destination = `dispatch(\"/movie/update?id=${item._id}\")`
+                div(class="row-sm-2", class="m-1") Movie Name: #{item["movie_Name"]}  <br>  Movie Genre: #{item["movie_Genre"]} <br> Rating: #{item["Rating"]} <br>
+                 button.btn( class="btn-primary ml-1", onclick= destination) Update 
     script.
-      function buy(i)
+      function dispatch(path)
       {
-      alert("you purchased item "+(i+1))
+      window.location.href=path
       }
